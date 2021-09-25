@@ -9,8 +9,8 @@ import itertools
 
 def startGame(screen, sounds, bird_images, other_images, background_image, cfg):
     base_pos = [0, cfg.SCREENHEIGHT * 0.79]
-    base_diff_bg = other_images['base'].get_width( - background_image.get_width())
-    msg_pos = [(cfg.SCREENWIDTH - other_images['message'].getwidth())/2, cfg.SCREENHEIGHT * 0.12]
+    base_diff_bg = other_images['base'].get_width() - background_image.get_width()
+    msg_pos = [(cfg.SCREENWIDTH-other_images['message'].get_width())/2, cfg.SCREENHEIGHT*0.12]
     bird_idx = 0
     bird_idx_change_count = 0
     bird_idx_cycle = itertools.cycle([0, 1, 2, 1])

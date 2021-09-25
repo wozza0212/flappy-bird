@@ -15,7 +15,7 @@ class Bird(pygame.sprite.Sprite):
         self.mask = pygame.mask.from_surface(self.image)
         self.rect.left, self.rect.top = position 
         
-        self.is_flapping = False 
+        self.is_flapped = False 
         self.down_speed = 0
         self.up_speed = 0
         

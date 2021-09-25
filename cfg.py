@@ -63,9 +63,7 @@ AUDIO_PATHS = {
     'point': os.path.join(os.getcwd(), 'resources/audios/point.wav'),
     'swoosh': os.path.join(os.getcwd(), 'resources/audios/swoosh.wav'),
     'wing': os.path.join(os.getcwd(), 'resources/audios/wing.wav')
-    
-    
-    }
+}
 
 
 
