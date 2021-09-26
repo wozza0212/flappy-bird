@@ -17,7 +17,7 @@ class Bird(pygame.sprite.Sprite):
         
         self.is_flapped = False 
         self.down_speed = 0
-        self.up_speed = 0
+        self.up_speed = 9
         
         self.bird_idx = idx
         self.bird_idx_cycle = itertools.cycle([0,1,2,1])
@@ -30,7 +30,7 @@ class Bird(pygame.sprite.Sprite):
             self.rect.top -= self.up_speed
             
             if self.up_speed <= 0:
-                self.unsetFlapping()
+                self.unsetFlapped()
                 self.up_speed = 9
                 self.down_speed = 0
                 
@@ -49,7 +49,8 @@ class Bird(pygame.sprite.Sprite):
             is_dead = True
             self.up_speed = 0
             self.down_speed = 0
-            self.rect.top -= boundary_values[0]
+            self.rect.top = boundary_values[0]
+            
         self.bird_idx_change_count += 1
         if self.bird_idx_change_count % 5 == 0:
             self.bird_idx = next(self.bird_idx_cycle)
@@ -59,7 +60,7 @@ class Bird(pygame.sprite.Sprite):
     
     def setFlapped(self):
         if self.is_flapped:
-            self.up_speed = max(12, self.up_speed + 1)
+            self.up_speed = max(12, self.up_speed+1)
         else:
             self.is_flapped = True 
     

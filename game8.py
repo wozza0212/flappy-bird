@@ -110,8 +110,8 @@ def main():
             
             if pipe.rect.left < 5 and pipe.rect.left > 0 and is_add_pipe:
                 pipe_pos = Pipe.randomPipe(cfg, pipe_images.get('top'))
-                pipe_sprites.add(Pipe(image=pipe_images('top'), position=pipe_pos.get('top')))
-                pipe_sprites.add(Pipe(image=pipe_images('bottom'), position=pipe_pos.get('bottom')))
+                pipe_sprites.add(Pipe(image=pipe_images.get('top'), position=pipe_pos.get('top')))
+                pipe_sprites.add(Pipe(image=pipe_images.get('bottom'), position=pipe_pos.get('bottom')))
                 is_add_pipe = False 
             elif pipe.rect.right < 0:
                 pipe_sprites.remove(pipe)
@@ -126,7 +126,7 @@ def main():
         bird.draw(screen)
         pygame.display.update()
         clock.tick(cfg.FPS)
-        endGame(screen, sounds, showScore, score, number_images, bird, pipe_sprites, background_image, other_images, base_pos, cfg)
+    endGame(screen, sounds, showScore, score, number_images, bird, pipe_sprites, background_image, other_images, base_pos, cfg)
                         
         
 if __name__ == '__main__':
